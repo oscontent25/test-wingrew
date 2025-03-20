@@ -6,7 +6,7 @@ on:
       - main
     # paths-ignore:
     #   - '.github/**'
-  
+
 env:
   IMG_URL_RISCV64: https://github.com/Azure-stars/testsuits-for-oskernel/releases/download/v0.1/sdcard-riscv64.img.gz # 镜像url
   IMG_URL_LOONGARCH64: https://github.com/Azure-stars/testsuits-for-oskernel/releases/download/v0.1/sdcard-loongarch64.img.gz # 镜像url
