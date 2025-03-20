@@ -14,12 +14,9 @@ env:
 
 jobs:
   run-autograding-tests:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        rust-toolchain: [nightly-2025-01-18]
     env:
       qemu-version: 9.2.1
     outputs:
@@ -29,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: ${{ matrix.rust-toolchain }}
+          toolchain: nightly-2025-01-18
           components: rust-src, llvm-tools
           targets: x86_64-unknown-none, riscv64gc-unknown-none-elf, aarch64-unknown-none, aarch64-unknown-none-softfloat, loongarch64-unknown-none
       - uses: Swatinem/rust-cache@v2
