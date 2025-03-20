@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '.github/**'
+    # paths-ignore:
+    #   - '.github/**'
 
 env:
   IMG_URL_RISCV64: https://github.com/Azure-stars/testsuits-for-oskernel/releases/download/v0.1/sdcard-riscv64.img.gz # 镜像url
@@ -73,7 +73,7 @@ jobs:
           outputfile: riscv_output.txt
           scriptPath: ./.github/classroom/busybox-musl
       - name: Autograding Reporter
-        uses: oscontent25/autograding-grading-reporter@main
+        uses: oscontent25/autograding-grading-reporter@releases/v1
         env:
           AUTOGRADINGBUSYBOXGLIBC_RESULTS: "${{steps.autogradingbusyboxglibc.outputs.result}}"
           AUTOGRADINGBUSYBOXMUSL_RESULTS: "${{steps.autogradingbusyboxmusl.outputs.result}}"
