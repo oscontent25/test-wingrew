@@ -11,10 +11,6 @@ env:
   TIMEOUT: 300 # 超时时间
   SCRIPT_REPO: https://github.com/oscontent25/EvaluationScript # 脚本仓库
   
-permissions:
-  checks: write
-  actions: read
-  contents: read
   
 jobs:
   run-autograding-tests:
