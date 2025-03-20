@@ -1,4 +1,4 @@
-name: run-autograding-tests
+name: Autograding Tests
 
 on: 
   push:
