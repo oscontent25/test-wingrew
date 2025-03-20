@@ -76,28 +76,28 @@ jobs:
           runners: autogradingbusyboxglibc,autogradingbusyboxmusl
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: run-autograding-tests
-    steps:
-      - uses: actions/checkout@v4
-      - name: Test Autograding Outputs
-        run: |
-          echo "${{ needs.build.outputs.details }}"
-          echo "here ${{ needs.build.outputs.result }}"
+  # deploy:
+  #   name: Deploy
+  #   runs-on: ubuntu-latest
+  #   needs: run-autograding-tests
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Test Autograding Outputs
+  #       run: |
+  #         echo "${{ needs.build.outputs.details }}"
+  #         echo "here ${{ needs.build.outputs.result }}"
           
-      - run: |
-          mkdir autograding_logs
-          cd autograding_logs
-          echo -ne "${{ needs.build.outputs.details }}\nPoints: ${{ needs.build.outputs.points }}" \
-            >> `date +%Y_%m_%d_%H_%M_%S`.txt
+  #     - run: |
+  #         mkdir autograding_logs
+  #         cd autograding_logs
+  #         echo -ne "${{ needs.build.outputs.details }}\nPoints: ${{ needs.build.outputs.points }}" \
+  #           >> `date +%Y_%m_%d_%H_%M_%S`.txt
       
-      - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: autograding_logs
-          keep_history: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: GitHub Pages
+  #       uses: crazy-max/ghaction-github-pages@v3
+  #       with:
+  #         target_branch: gh-pages
+  #         build_dir: autograding_logs
+  #         keep_history: true
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
