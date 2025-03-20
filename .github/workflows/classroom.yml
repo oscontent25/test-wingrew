@@ -11,7 +11,7 @@ env:
   TIMEOUT: 300 # 超时时间
   SCRIPT_REPO: https://github.com/oscontent25/EvaluationScript # 脚本仓库
   
-  
+
 jobs:
   run-autograding-tests:
     runs-on: ${{ matrix.os }}
