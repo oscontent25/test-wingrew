@@ -72,12 +72,11 @@ jobs:
         with:
           outputfile: riscv_output.txt
           scriptPath: ./.github/classroom/busybox-musl
-      - name: run-autograding-tests
-        uses: classroom-resources/autograding-grading-reporter@v1
+      - name: Autograding Reporter
+        uses: oscontent25/autograding-grading-reporter@v1
         env:
           AUTOGRADINGBUSYBOXGLIBC_RESULTS: "${{steps.autogradingbusyboxglibc.outputs.result}}"
           AUTOGRADINGBUSYBOXMUSL_RESULTS: "${{steps.autogradingbusyboxmusl.outputs.result}}"
-          
         with:
           runners: autogradingbusyboxglibc,autogradingbusyboxmusl
           token: ${{ secrets.GITHUB_TOKEN }}
