@@ -21,8 +21,10 @@ jobs:
     outputs:
       details: ${{ steps.autograding.outputs.details }}
       points: ${{ steps.autograding.outputs.points }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: nightly-2025-01-18
