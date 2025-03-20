@@ -15,7 +15,6 @@ env:
 
 jobs:
   run-autograding-tests:
-    name: run-autograding-tests
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
