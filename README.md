@@ -12,7 +12,6 @@
 
 ## 内核赛道OS训练repo说明
 
-
 > 目前支持对2025年全国大学生OS比赛内核赛道的Linux Apps测例的测试，采用形式与比赛大致相同，选手需要在根目录添加一个 Makefile 文件，使用 make all 命令在根目录生成 kernel-qemu 文件，由评测机自动执行。
 
 - 一个基本的能运行的 `kernel demo`： [https://github.com/oscomp/starry-next](https://github.com/oscomp/starry-next)
