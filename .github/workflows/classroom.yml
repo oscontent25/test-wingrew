@@ -77,8 +77,10 @@ jobs:
         env:
           AUTOGRADINGBUSYBOXGLIBC_RESULTS: "${{steps.autogradingbusyboxglibc.outputs.result}}"
           AUTOGRADINGBUSYBOXMUSL_RESULTS: "${{steps.autogradingbusyboxmusl.outputs.result}}"
+          
         with:
           runners: autogradingbusyboxglibc,autogradingbusyboxmusl
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     name: Deploy
