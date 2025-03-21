@@ -60,11 +60,13 @@ jobs:
         with:
           outputfile: riscv_output.txt
           scriptPath: ./.github/classroom/busybox-glibc
+          max-score: 54
       - uses: oscontent25/os-autograding@master
         id: autogradingbusyboxmusl
         with:
           outputfile: riscv_output.txt
           scriptPath: ./.github/classroom/busybox-musl
+          max-score: 54
       - name: Autograding Reporter
         uses: oscontent25/autograding-grading-reporter@releases/v1
         env:
