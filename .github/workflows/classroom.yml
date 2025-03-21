@@ -57,12 +57,14 @@ jobs:
       - name: Download EvaluationScript
         run: |
           git clone ${{ env.SCRIPT_REPO }} .github/classroom
-      - uses: oscontent25/os-autograding@master
+      - name: busyboxglibc-test
+        uses: oscontent25/os-autograding@master
         id: autogradingbusyboxglibc
         with:
           outputfile: riscv_output.txt
           scriptPath: ./.github/classroom/busybox-glibc
-      - uses: oscontent25/os-autograding@master
+      - name: busyboxmusl-test
+        uses: oscontent25/os-autograding@master
         id: autogradingbusyboxmusl
         with:
           outputfile: riscv_output.txt
