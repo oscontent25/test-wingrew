@@ -6,6 +6,7 @@
 - [查看训练排行榜单](https://oscontent25.github.io/classroom-grading-template/)
 
 
+
 **注：**
 1. **基于Github Classroom，具有在线编程，在线自动评测，在线显示排行榜的特征**
 2. **没学过git/github使用、C/Rust语言、基本数据结构和算法、操作系统和与RISC-V相关的组成原理课程的同学，建议先补一下相关知识**
